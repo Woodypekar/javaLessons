@@ -1,4 +1,6 @@
-public class myFirstProgram{
+package ru.stqa.javaLessons.sandBox;
+
+public class myFirstProgram {
 
     public static void main (String[] args) {
 	System.out.println("Hello, world!");
