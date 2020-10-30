@@ -7,14 +7,15 @@ public class MyFirstProgram {
         hello("user");
         hello("Nikita");
 
-<<<<<<< HEAD
+
         Point p1 = new Point(1, 2);
-        Point p2 = new Point(11, 22);
+        Point p2 = new Point(2, 1);
+        int answer = (int) p1.distance(p2);
+        System.out.println(answer);
         System.out.println(p1.distance(p2));
-=======
+
         Square s = new Square(5);
         System.out.println("Площадь квадрата со стороной " + s.l + " = " + s.area());
->>>>>>> parent of 167c709... Удалены строки из обучения
 
         Rectangle r = new Rectangle(4 ,6);
         System.out.println("Площадь прямоугольника со сторонами " + r.a + " и "+ r.b + " = " + r.area());
