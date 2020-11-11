@@ -2,6 +2,7 @@ package ru.stqa.pft.addressbook.appmanager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class HelperBase {
 
@@ -19,5 +20,11 @@ public class HelperBase {
         click(locator);
         wd.findElement(locator).clear();
         wd.findElement(locator).sendKeys(text);
+    }
+
+    public void list(By locator, String text) {
+      wd.findElement(locator).click();
+      new Select(wd.findElement(locator)).selectByVisibleText(text);
+      wd.findElement(locator).click();
     }
 }
