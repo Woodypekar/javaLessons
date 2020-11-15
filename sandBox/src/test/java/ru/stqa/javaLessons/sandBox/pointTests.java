@@ -3,7 +3,7 @@ package ru.stqa.javaLessons.sandBox;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class pointTests {
+public class PointTests {
 
     @Test
     public void testDistance(){
