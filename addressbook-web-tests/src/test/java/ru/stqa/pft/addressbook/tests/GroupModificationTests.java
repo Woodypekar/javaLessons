@@ -7,6 +7,13 @@ public class GroupModificationTests extends TestBase{
     @Test
     public void testGroupModification() {
         app.getNavigationHelper().goToGroupPage();
+        if (! app.getGroupHelper().isThereAGroup()) {
+            app.getGroupHelper().newGroup();
+            app.getGroupHelper().createNewGroup(new GroupData("Nikitosiki", null, null));
+            app.getGroupHelper().submitGroupCreation();
+            app.getGroupHelper().returnToGroupPage();
+        }
+        app.getGroupHelper().selectGroup();
         app.getGroupHelper().initGroupModification();
         app.getGroupHelper().createNewGroup(new GroupData("Nikitosiki", "test", "testNikitosik"));
         app.getGroupHelper().submitGroupModification();

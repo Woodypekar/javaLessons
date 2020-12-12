@@ -51,7 +51,7 @@ public class ContactHelper extends HelperBase{
   }
 
   public void initModificationContact() {
-    wd.findElement(By.xpath("(//img[@alt='Edit'])[2]")).click();
+    wd.findElement(By.xpath("(//img[@alt='Edit'])")).click();
 
   }
 
@@ -64,4 +64,9 @@ public class ContactHelper extends HelperBase{
       wd.findElement(By.xpath("//input[@value='Delete']")).click();
       wd.switchTo().alert().accept();
     }
+    public boolean isThereAContact(){
+      return isElementPresent(By.name("selected[]"));
+    }
+
+
 }
