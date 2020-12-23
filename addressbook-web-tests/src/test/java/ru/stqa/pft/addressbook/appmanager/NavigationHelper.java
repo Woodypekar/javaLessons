@@ -19,13 +19,13 @@ public class NavigationHelper extends HelperBase{
       click(By.linkText("groups"));
     }
 
-    public void goToHomePage() {
+    public void homePage() {
 
         wd.findElement(By.linkText("home page")).click();
     }
 
 
-    public void goToAddForm() {
+    public void addForm() {
       click(By.linkText("add new"));
     }
 }

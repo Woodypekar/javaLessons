@@ -31,7 +31,7 @@ public class ApplicationManager {
         } else if (browser.equals(BrowserType.IE)) {
             wd = new InternetExplorerDriver();
         }
-        wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        wd.manage().timeouts().implicitlyWait(6, TimeUnit.SECONDS);
         wd.get("http://localhost:8080/addressbook");
         contactHelper = new ContactHelper(wd);
         groupHelper = new GroupHelper(wd);
@@ -58,7 +58,7 @@ public class ApplicationManager {
         return navigationHelper;
     }
 
-    public ContactHelper getContactHelper() {
+    public ContactHelper contact() {
         return contactHelper;
     }
 }
