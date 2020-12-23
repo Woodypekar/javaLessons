@@ -13,13 +13,13 @@ public class ContactCreationsTests extends TestBase {
   @Test
   public void testGroupCreations(){
     List<ContactData> before = app.getContactHelper().getContactList();
-    app.getNavigationHelper().goToAddForm();
+    app.goTo().goToAddForm();
     ContactData contact = new ContactData("Nikitos", "Andreevich", "Lagutchev", "Woodypekar", "moka", "NIC", "jopa", "98745", "98745",
             "98745", "98745", "mail.ru", "mail2.ru", "mail3.ru", "popadalavo", "12", "May", "1234", "17", "November", "7654", "Nikitosiki",
             "irapopa", "popaira", "notes");
     app.getContactHelper().addNewContact(contact, true);
     app.getContactHelper().submitNewContact();
-    app.getNavigationHelper().goToHomePage();
+    app.goTo().goToHomePage();
     List<ContactData> after = app.getContactHelper().getContactList();
     Assert.assertEquals(after.size(), before.size() + 1);
 
