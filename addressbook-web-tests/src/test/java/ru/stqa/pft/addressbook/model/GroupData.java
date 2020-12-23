@@ -2,46 +2,46 @@ package ru.stqa.pft.addressbook.model;
 
 public class GroupData {
 
-    private int idOfGroup= Integer.MAX_VALUE;
-    private String nameOfGroup;
-    private String headerOfGroup;
-    private String footerOfGroup;
+    private int id = Integer.MAX_VALUE;
+    private String name;
+    private String header;
+    private String footer;
 
 
     public GroupData withId(int idOfGroup) {
-        this.idOfGroup = idOfGroup;
+        this.id = idOfGroup;
         return this;
     }
 
     public GroupData withName(String nameOfGroup) {
-        this.nameOfGroup = nameOfGroup;
+        this.name = nameOfGroup;
         return this;
     }
 
     public GroupData withHeader(String headerOfGroup) {
-        this.headerOfGroup = headerOfGroup;
+        this.header = headerOfGroup;
         return this;
     }
 
     public GroupData withFooter(String footerOfGroup) {
-        this.footerOfGroup = footerOfGroup;
+        this.footer = footerOfGroup;
         return this;
     }
 
     public int getId() {
-        return idOfGroup;
+        return id;
     }
 
-    public String getNameOfGroup() {
-        return nameOfGroup;
+    public String getName() {
+        return name;
     }
 
-    public String getHeaderOfGroup() {
-        return headerOfGroup;
+    public String getHeader() {
+        return header;
     }
 
-    public String getFooterOfGroup() {
-        return footerOfGroup;
+    public String getFooter() {
+        return footer;
     }
 
     @Override
@@ -51,19 +51,22 @@ public class GroupData {
 
         GroupData groupData = (GroupData) o;
 
-        return nameOfGroup != null ? nameOfGroup.equals(groupData.nameOfGroup) : groupData.nameOfGroup == null;
+        if (id != groupData.id) return false;
+        return name != null ? name.equals(groupData.name) : groupData.name == null;
     }
 
     @Override
     public int hashCode() {
-        return nameOfGroup != null ? nameOfGroup.hashCode() : 0;
+        int result = id;
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        return result;
     }
 
     @Override
     public String toString() {
         return "GroupData{" +
-                "idOfGroup='" + idOfGroup + '\'' +
-                ", nameOfGroup='" + nameOfGroup + '\'' +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 
