@@ -15,6 +15,10 @@ public class GroupHelper extends HelperBase{
         super(wd);
     }
 
+    public int count(){
+        return wd.findElements(By.name("selected[]")).size();
+    }
+
     public void returnToGroupPage() {
         click(By.linkText("group page"));
     }

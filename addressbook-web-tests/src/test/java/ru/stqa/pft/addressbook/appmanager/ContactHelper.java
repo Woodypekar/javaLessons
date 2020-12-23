@@ -50,6 +50,10 @@ public class ContactHelper extends HelperBase{
     }
 
 
+  public int count() {
+    return wd.findElements(By.xpath("//tr[@name='entry']")).size();
+  }
+
   public void submit() {
     wd.findElement(By.xpath("(//input[@name='submit'])[2]")).click();
   }
