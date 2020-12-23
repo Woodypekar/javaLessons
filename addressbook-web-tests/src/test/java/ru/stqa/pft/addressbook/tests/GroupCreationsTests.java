@@ -4,11 +4,14 @@ import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+<<<<<<< HEAD
 
 import java.util.Comparator;
 import java.util.List;
 
 
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
 public class GroupCreationsTests extends TestBase {
 
 
@@ -20,6 +23,7 @@ public class GroupCreationsTests extends TestBase {
     app.getGroupHelper().createNewGroup(new GroupData("Nikitosiki", null, null));
     app.getGroupHelper().submitGroupCreation();
     app.getGroupHelper().returnToGroupPage();
+<<<<<<< HEAD
     List<GroupData> after = app.getGroupHelper().getGroupList();
     Assert.assertEquals(after.size(), before.size() + 1);
 
@@ -29,6 +33,8 @@ public class GroupCreationsTests extends TestBase {
     after.sort(byId);
     Assert.assertEquals(before,after);
 
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
     int after = app.getGroupHelper().getGroupCount();
     Assert.assertEquals(after, before + 1);
     app.logout();

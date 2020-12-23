@@ -4,11 +4,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 
+<<<<<<< HEAD
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
 public class GroupModificationTests extends TestBase{
     @Test
     public void testGroupModification() {
@@ -25,6 +28,7 @@ public class GroupModificationTests extends TestBase{
         app.getGroupHelper().createNewGroup(new GroupData("Nikitosiki", "test", "testNikitosik"));
         app.getGroupHelper().submitGroupModification();
         app.getGroupHelper().returnToGroupPage();
+<<<<<<< HEAD
 
         List<GroupData> after = app.getGroupHelper().getGroupList();
         Assert.assertEquals(after.size(), before.size());
@@ -40,6 +44,10 @@ public class GroupModificationTests extends TestBase{
         int after = app.getGroupHelper().getGroupCount();
         Assert.assertEquals(after, before);
 
+=======
+        int after = app.getGroupHelper().getGroupCount();
+        Assert.assertEquals(after, before);
+>>>>>>> parent of b9dea0b... 4.9 работает
         app.logout();
     }
 
