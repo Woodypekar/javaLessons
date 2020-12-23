@@ -2,33 +2,33 @@ package ru.stqa.pft.addressbook.model;
 
 public class GroupData {
 
-    private int idOfGroup;
-    private final String nameOfGroup;
-    private final String headerOfGroup;
-    private final String footerOfGroup;
+    private int idOfGroup= Integer.MAX_VALUE;
+    private String nameOfGroup;
+    private String headerOfGroup;
+    private String footerOfGroup;
 
 
-    public GroupData(String nameOfGroup, String headerOfGroup, String footerOfGroup) {
-
-        this.idOfGroup = Integer.MAX_VALUE;
-        this.nameOfGroup = nameOfGroup;
-        this.headerOfGroup = headerOfGroup;
-        this.footerOfGroup = footerOfGroup;
-    }
-
-    public GroupData(int idOfGroup, String nameOfGroup, String headerOfGroup, String footerOfGroup) {
+    public GroupData withId(int idOfGroup) {
         this.idOfGroup = idOfGroup;
+        return this;
+    }
+
+    public GroupData withName(String nameOfGroup) {
         this.nameOfGroup = nameOfGroup;
+        return this;
+    }
+
+    public GroupData withHeader(String headerOfGroup) {
         this.headerOfGroup = headerOfGroup;
+        return this;
+    }
+
+    public GroupData withFooter(String footerOfGroup) {
         this.footerOfGroup = footerOfGroup;
+        return this;
     }
 
-
-    public void setIdOfGroup(int idOfGroup) {
-        this.idOfGroup = idOfGroup;
-    }
-
-    public int getIdOfGroup() {
+    public int getId() {
         return idOfGroup;
     }
 
