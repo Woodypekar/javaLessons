@@ -7,8 +7,9 @@ public class GroupData {
     private final String headerOfGroup;
     private final String footerOfGroup;
 
+
     public GroupData(String nameOfGroup, String headerOfGroup, String footerOfGroup) {
-        this.idOfGroup = 0;
+        this.idOfGroup = Integer.MAX_VALUE;
         this.nameOfGroup = nameOfGroup;
         this.headerOfGroup = headerOfGroup;
         this.footerOfGroup = footerOfGroup;
@@ -21,24 +22,6 @@ public class GroupData {
         this.footerOfGroup = footerOfGroup;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        GroupData groupData = (GroupData) o;
-
-        if (idOfGroup != groupData.idOfGroup) return false;
-        return nameOfGroup != null ? nameOfGroup.equals(groupData.nameOfGroup) : groupData.nameOfGroup == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = idOfGroup;
-        result = 31 * result + (nameOfGroup != null ? nameOfGroup.hashCode() : 0);
-        return result;
-    }
 
     public void setIdOfGroup(int idOfGroup) {
         this.idOfGroup = idOfGroup;
@@ -58,6 +41,21 @@ public class GroupData {
 
     public String getFooterOfGroup() {
         return footerOfGroup;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        GroupData groupData = (GroupData) o;
+
+        return nameOfGroup != null ? nameOfGroup.equals(groupData.nameOfGroup) : groupData.nameOfGroup == null;
+    }
+
+    @Override
+    public int hashCode() {
+        return nameOfGroup != null ? nameOfGroup.hashCode() : 0;
     }
 
     @Override
