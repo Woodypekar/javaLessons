@@ -1,14 +1,13 @@
 package ru.stqa.pft.addressbook.model;
 
 public class GroupData {
-
-    private int idOfGroup;
     private final String nameOfGroup;
     private final String headerOfGroup;
     private final String footerOfGroup;
 
 
     public GroupData(String nameOfGroup, String headerOfGroup, String footerOfGroup) {
+<<<<<<< HEAD
         this.idOfGroup = Integer.MAX_VALUE;
         this.nameOfGroup = nameOfGroup;
         this.headerOfGroup = headerOfGroup;
@@ -17,11 +16,14 @@ public class GroupData {
 
     public GroupData(int idOfGroup, String nameOfGroup, String headerOfGroup, String footerOfGroup) {
         this.idOfGroup = idOfGroup;
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
         this.nameOfGroup = nameOfGroup;
         this.headerOfGroup = headerOfGroup;
         this.footerOfGroup = footerOfGroup;
     }
 
+<<<<<<< HEAD
 
     public void setIdOfGroup(int idOfGroup) {
         this.idOfGroup = idOfGroup;
@@ -31,6 +33,8 @@ public class GroupData {
         return idOfGroup;
     }
 
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
     public String getNameOfGroup() {
         return nameOfGroup;
     }
@@ -42,6 +46,7 @@ public class GroupData {
     public String getFooterOfGroup() {
         return footerOfGroup;
     }
+<<<<<<< HEAD
 
     @Override
     public boolean equals(Object o) {
@@ -65,4 +70,6 @@ public class GroupData {
                 ", nameOfGroup='" + nameOfGroup + '\'' +
                 '}';
     }
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
 }
