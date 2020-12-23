@@ -8,6 +8,7 @@ public class GroupData {
 
     public GroupData(String nameOfGroup, String headerOfGroup, String footerOfGroup) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.idOfGroup = Integer.MAX_VALUE;
         this.nameOfGroup = nameOfGroup;
         this.headerOfGroup = headerOfGroup;
@@ -18,11 +19,14 @@ public class GroupData {
         this.idOfGroup = idOfGroup;
 =======
 >>>>>>> parent of b9dea0b... 4.9 работает
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
         this.nameOfGroup = nameOfGroup;
         this.headerOfGroup = headerOfGroup;
         this.footerOfGroup = footerOfGroup;
     }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     public void setIdOfGroup(int idOfGroup) {
@@ -33,6 +37,8 @@ public class GroupData {
         return idOfGroup;
     }
 
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
 =======
 >>>>>>> parent of b9dea0b... 4.9 работает
     public String getNameOfGroup() {
@@ -46,6 +52,7 @@ public class GroupData {
     public String getFooterOfGroup() {
         return footerOfGroup;
     }
+<<<<<<< HEAD
 <<<<<<< HEAD
 
     @Override
@@ -70,6 +77,8 @@ public class GroupData {
                 ", nameOfGroup='" + nameOfGroup + '\'' +
                 '}';
     }
+=======
+>>>>>>> parent of b9dea0b... 4.9 работает
 =======
 >>>>>>> parent of b9dea0b... 4.9 работает
 }
