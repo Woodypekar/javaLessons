@@ -3,7 +3,6 @@ package ru.stqa.pft.addressbook.tests;
 import org.testng.Assert;
 import org.testng.annotations.*;
 import ru.stqa.pft.addressbook.model.ContactData;
-import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.Comparator;
 import java.util.List;
@@ -29,7 +28,6 @@ public class ContactCreationsTests extends TestBase {
     before.sort(byId);
     after.sort(byId);
     Assert.assertEquals(before,after);
-    app.logout();
   }
 
 
