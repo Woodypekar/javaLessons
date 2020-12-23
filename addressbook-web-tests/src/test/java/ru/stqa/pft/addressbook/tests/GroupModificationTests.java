@@ -1,16 +1,14 @@
 package ru.stqa.pft.addressbook.tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 
-<<<<<<< HEAD
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
-=======
->>>>>>> parent of b9dea0b... 4.9 работает
 public class GroupModificationTests extends TestBase{
     @Test
     public void testGroupModification() {
@@ -21,34 +19,22 @@ public class GroupModificationTests extends TestBase{
             app.getGroupHelper().submitGroupCreation();
             app.getGroupHelper().returnToGroupPage();
         }
-        app.getGroupHelper().selectGroup();
+        List<GroupData> before = app.getGroupHelper().getGroupList();
+        app.getGroupHelper().selectGroup(before.size() - 1);
         app.getGroupHelper().initGroupModification();
-        app.getGroupHelper().createNewGroup(new GroupData("Nikitosiki", "test", "testNikitosik"));
+        GroupData group = new GroupData(before.get(before.size() - 1).getIdOfGroup(), "Nikitosiki", "test", "testNikitosik");
+        app.getGroupHelper().createNewGroup(group);
         app.getGroupHelper().submitGroupModification();
         app.getGroupHelper().returnToGroupPage();
-<<<<<<< HEAD
-<<<<<<< HEAD
-
         List<GroupData> after = app.getGroupHelper().getGroupList();
         Assert.assertEquals(after.size(), before.size());
 
         before.remove(before.size() - 1);
         before.add(group);
-
         Comparator<? super GroupData> byId = (g1, g2) -> Integer.compare(g1.getIdOfGroup(), g2.getIdOfGroup());
         before.sort(byId);
         after.sort(byId);
         Assert.assertEquals(before,after);
-
-        int after = app.getGroupHelper().getGroupCount();
-        Assert.assertEquals(after, before);
-
-=======
-        int after = app.getGroupHelper().getGroupCount();
-        Assert.assertEquals(after, before);
->>>>>>> parent of b9dea0b... 4.9 работает
-=======
->>>>>>> parent of eee03eb... Считаем кол-во элементов групп
         app.logout();
     }
 

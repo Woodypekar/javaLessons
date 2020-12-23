@@ -28,11 +28,12 @@ public class ContactData {
     private final String phone2;
     private final String notes;
 
-    public ContactData(int idOfContact, String firstname) {
+
+    public ContactData(int idOfContact, String firstname, String lastname, String bday, String bmonth, String byear, String aday, String amonth, String ayear) {
         this.idOfContact = idOfContact;
         this.firstname = firstname;
         this.middlename = null;
-        this.lastname = null;
+        this.lastname = lastname;
         this.nickname = null;
         this.title = null;
         this.company = null;
@@ -45,42 +46,16 @@ public class ContactData {
         this.email2 = null;
         this.email3 = null;
         this.homepage = null;
-        this.bday = null;
-        this.bmonth = null;
-        this.byear = null;
-        this.aday = null;
-        this.amonth = null;
-        this.ayear = null;
+        this.bday = bday;
+        this.bmonth = bmonth;
+        this.byear = byear;
+        this.aday = aday;
+        this.amonth = amonth;
+        this.ayear = ayear;
         this.group = null;
         this.address2 = null;
         this.phone2 = null;
         this.notes = null;
-    }
-
-    @Override
-    public String toString() {
-        return "ContactData{" +
-                "idOfContact=" + idOfContact +
-                ", firstname='" + firstname + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        ContactData that = (ContactData) o;
-
-        if (idOfContact != that.idOfContact) return false;
-        return firstname != null ? firstname.equals(that.firstname) : that.firstname == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = idOfContact;
-        result = 31 * result + (firstname != null ? firstname.hashCode() : 0);
-        return result;
     }
 
     public int getIdOfContact() {
@@ -90,6 +65,7 @@ public class ContactData {
     public ContactData(String firstname, String middlename, String lastname, String nickname, String title, String company, String address, String homePhone, String mobilePhone,
                        String workPhone, String faxPhone, String email1, String email2, String email3, String homepage, String bday, String bmonth, String byear, String aday,
                        String amonth, String ayear, String group, String address2, String phone2, String notes) {
+        this.idOfContact = Integer.MAX_VALUE;
         this.firstname = firstname;
         this.middlename = middlename;
         this.lastname = lastname;
@@ -215,5 +191,32 @@ public class ContactData {
 
     public String getNotes() {
         return notes;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactData{" +
+                "idOfContact=" + idOfContact +
+                ", firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ContactData that = (ContactData) o;
+
+        if (firstname != null ? !firstname.equals(that.firstname) : that.firstname != null) return false;
+        return lastname != null ? lastname.equals(that.lastname) : that.lastname == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = firstname != null ? firstname.hashCode() : 0;
+        result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
+        return result;
     }
 }

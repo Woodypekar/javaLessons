@@ -64,8 +64,8 @@ public class ContactHelper extends HelperBase{
     wd.findElement(By.xpath("(//input[@name='update'])[2]")).click();
   }
 
-  public void deleteSelectedContact(){
-      wd.findElement(By.name("selected[]")).click();
+  public void deleteSelectedContact(int index){
+      wd.findElements(By.name("selected[]")).get(index).click();
       wd.findElement(By.xpath("//input[@value='Delete']")).click();
       wd.switchTo().alert().accept();
     }
@@ -81,7 +81,7 @@ public class ContactHelper extends HelperBase{
         String firstname = element.findElements(By.tagName("td")).get(2).getText();
         int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));//?
         String lastname = element.findElement(By.xpath("//td[2]")).getText();
-        ContactData contact = new ContactData(id, name);
+        ContactData contact = new ContactData(id, firstname, lastname,null,null,null,null,null,null);
         contacts.add(contact);
       }
       return contacts;
