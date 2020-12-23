@@ -11,13 +11,12 @@ public class ContactCreationsTests extends TestBase {
 
 
   @Test
-  public void testGroupCreations(){
+  public void testContactCreations(){
     Contacts before = app.contact().all();
     ContactData contact = new ContactData().withFirstname("Nikitos").withLastname("Lagutchev").withBday("12").withBmonth("May").withByear("1234")
             .withAday("17").withAmonth("November").withAyear("7654").withGroup("Nikitosiki");
     app.goTo().addForm();
-    app.contact().create(contact, true);
-    app.contact().submit();
+    app.contact().create(contact);
     app.goTo().homePage();
     Contacts after = app.contact().all();
 

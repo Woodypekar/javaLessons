@@ -17,7 +17,7 @@ public class ContactHelper extends HelperBase{
         super(wd);
     }
 
-    public void create(ContactData contactData, boolean creation) {
+    public void createContact(ContactData contactData, boolean creation) {
       type(By.name("firstname"), contactData.getFirstname());
       type(By.name("middlename"), contactData.getMiddlename());
       type(By.name("lastname"), contactData.getLastname());
@@ -71,27 +71,41 @@ public class ContactHelper extends HelperBase{
       selectContactById(contact.getId());
       wd.findElement(By.xpath("//input[@value='Delete']")).click();
       wd.switchTo().alert().accept();
+      contactCache = null;
     }
   public void modifyContact(ContactData contact) {
     modify(contact.getId());
-    create(contact,false);
+    createContact(contact,false);
+    contactCache = null;
     submitModify();
+  }
+
+  public void create(ContactData contact) {
+    app.contact().createContact(contact, true);
+    app.contact().submit();
+    contactCache = null;
   }
     public boolean isThereAContact(){
       return isElementPresent(By.name("selected[]"));
     }
 
+  private Contacts contactCache = null;
 
     public Contacts all() {
-      Contacts contacts = new Contacts();
+
+      if (contactCache != null) {
+        return new Contacts(contactCache);
+      }
+
+      contactCache = new Contacts();
       List<WebElement> elements = wd.findElements(By.xpath("//tr[contains(@name ,'entry')]"));
       for (WebElement element : elements){
         String firstname = element.findElements(By.tagName("td")).get(2).getText();
         int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("id"));//?
         String lastname = element.findElement(By.xpath("//td[2]")).getText();
         ContactData contact = new ContactData().withId(id).withFirstname(firstname).withLastname(lastname);
-        contacts.add(contact);
+        contactCache.add(contact);
       }
-      return contacts;
+      return new Contacts(contactCache);
     }
 }

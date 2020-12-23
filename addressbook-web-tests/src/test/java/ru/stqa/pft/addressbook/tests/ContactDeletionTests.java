@@ -14,7 +14,7 @@ public class ContactDeletionTests extends TestBase{
     public void ensurePrediction(){
         if (app.contact().all().size() == 0) {
             app.goTo().addForm();
-            app.contact().create(new ContactData().withFirstname("Nikitos").withLastname("Lagutchev").withBday("12").withBmonth("May").withByear("1234")
+            app.contact().createContact(new ContactData().withFirstname("Nikitos").withLastname("Lagutchev").withBday("12").withBmonth("May").withByear("1234")
                     .withAday("17").withAmonth("November").withAyear("7654").withGroup("Nikitosiki"), true);
             app.contact().submit();
             app.goTo().homePage();
