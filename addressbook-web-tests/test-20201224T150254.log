@@ -1,0 +1,2 @@
+6972 [main] INFO  r.s.pft.addressbook.tests.TestBase - Start test testContactCreation with parameters [ContactData{id=0, firstname='Nikitos 0', lastname='Lagutchev 0'}]
+13895 [main] INFO  r.s.pft.addressbook.tests.TestBase - Stop test testContactCreation with parameters [ContactData{id=55, firstname='Nikitos 0', lastname='Lagutchev 0'}]
