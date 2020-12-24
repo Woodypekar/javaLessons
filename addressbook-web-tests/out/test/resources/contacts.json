@@ -5,6 +5,7 @@
     "address": "Asd 0",
     "homePhone": "111 0",
     "mobilePhone": "231 0",
+    "workPhone": "321 0",
     "email1": "hghggh@mail.ru 0",
     "email2": "vbvbv@mail.ru 0",
     "email3": "ajdjhaljs@mail.ru 0",
@@ -15,6 +16,6 @@
     "amonth": "November",
     "ayear": "7654",
     "group": "Nikitosiki",
-    "photo": {}
+    "photo": "src\\test\\resources\\dog.png"
   }
 ]

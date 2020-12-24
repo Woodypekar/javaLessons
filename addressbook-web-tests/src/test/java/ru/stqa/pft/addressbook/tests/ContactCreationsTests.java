@@ -70,9 +70,9 @@ public class ContactCreationsTests extends TestBase {
 
 
 
-  @Test(dataProvider = "validContactsFromXml")
+  @Test(dataProvider = "validContactsFromJson")
   public void testContactCreation(ContactData contact) throws Exception {
-    Contacts before = app.contact().all();
+    Contacts before = app.db().contacts();
     //File photo = new File("src/test/resources/dog.png");
     //ContactData contact = new ContactData().withFirstname("Nikitos").withLastname("Lagutchev").withBday("12").withBmonth("May").withByear("1234")
     //        .withAday("17").withAmonth("November").withAyear("7654").withGroup("Nikitosiki").withPhoto(photo);
@@ -80,7 +80,7 @@ public class ContactCreationsTests extends TestBase {
     app.contact().create(contact);
     app.goTo().homePage();
     assertThat(app.contact().count(), equalTo(before.size() + 1));
-    Contacts after = app.contact().all();
+    Contacts after = app.db().contacts();
 
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));

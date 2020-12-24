@@ -57,7 +57,7 @@ public class ContactDataGenerator {
         System.out.println(new File(".").getAbsolutePath());
         try (Writer writer = new FileWriter(file)){
             for (ContactData contact : contacts) {
-                writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n"
+                writer.write(String.format("%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s\n"
                         , contact.getFirstname(), contact.getLastname()
                         , contact.getAddress(), contact.getHomePhone(), contact.getMobilePhone(), contact.getEmail1()
                         , contact.getEmail2(), contact.getEmail3(), contact.getBday(), contact.getBmonth()
@@ -89,7 +89,7 @@ public class ContactDataGenerator {
         for (int i = 0; i < count; i++) {
             contacts.add(new ContactData().withFirstname(String.format("Nikitos %s", i)).withLastname(String.format("Lagutchev %s", i))
                     .withAddress(String.format("Asd %s", i)).withHomePhone(String.format("111 %s", i))
-                    .withMobilePhone(String.format("231 %s", i)).withEmail1(String.format("hghggh@mail.ru %s", i))
+                    .withMobilePhone(String.format("231 %s", i)).withWorkPhone(String.format("321 %s", i)).withEmail1(String.format("hghggh@mail.ru %s", i))
                     .withEmail2(String.format("vbvbv@mail.ru %s", i)).withEmail3(String.format("ajdjhaljs@mail.ru %s", i))
                     .withBday("12").withBmonth("May").withByear("1234").withAday("15").withAmonth("November").withAyear("7654")
                     .withGroup("Nikitosiki").withPhoto(photo));
