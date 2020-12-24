@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import ru.stqa.pft.addressbook.tests.TestBase;
 
+import java.io.File;
+
 public class HelperBase extends TestBase {
 
     protected WebDriver wd;
@@ -26,6 +28,12 @@ public class HelperBase extends TestBase {
                 wd.findElement(locator).clear();
                 wd.findElement(locator).sendKeys(text);
             }
+        }
+    }
+
+    protected void attach(By locator, File file) {
+        if (file != null) {
+            wd.findElement(locator).sendKeys(file.getAbsolutePath());
         }
     }
 
