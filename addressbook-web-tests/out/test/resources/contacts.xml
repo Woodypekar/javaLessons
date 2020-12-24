@@ -1,0 +1,20 @@
+<list>
+  <contact>
+    <firstname>Nikitos 0</firstname>
+    <lastname>Lagutchev 0</lastname>
+    <address>Asd 0</address>
+    <homePhone>111 0</homePhone>
+    <mobilePhone>231 0</mobilePhone>
+    <email1>hghggh@mail.ru 0</email1>
+    <email2>vbvbv@mail.ru 0</email2>
+    <email3>ajdjhaljs@mail.ru 0</email3>
+    <bday>12</bday>
+    <bmonth>May</bmonth>
+    <byear>1234</byear>
+    <aday>15</aday>
+    <amonth>November</amonth>
+    <ayear>7654</ayear>
+    <group>Nikitosiki</group>
+    <photo>src\test\resources\dog.png</photo>
+  </contact>
+</list>

@@ -1,37 +1,71 @@
 package ru.stqa.pft.addressbook.model;
+import com.google.gson.annotations.Expose;
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+import com.thoughtworks.xstream.annotations.XStreamOmitField;
+
 import java.io.File;
 
-public class ContactData {
-    private int id = Integer.MAX_VALUE;
-    private String firstname;
-    private String middlename;
-    private String lastname;
-    private String nickname;
-    private String title;
-    private String company;
-    private String address;
-    private String homePhone;
-    private String mobilePhone;
-    private String workPhone;
-    private String faxPhone;
-    private String email1;
-    private String email2;
-    private String email3;
-    private String homepage;
-    private String bday;
-    private String bmonth;
-    private String byear;
-    private String aday;
-    private String amonth;
-    private String ayear;
-    private String group;
-    private String address2;
-    private String phone2;
-    private String notes;
-    private String allPhones;
-    private String allEmails;
-    private File photo;
+@XStreamAlias("contact")
 
+public class ContactData {
+    @XStreamOmitField
+    private int id = Integer.MAX_VALUE;
+    @Expose
+    private String firstname;
+    @Expose
+    private String middlename;
+    @Expose
+    private String lastname;
+    @Expose
+    private String nickname;
+    @Expose
+    private String title;
+    @Expose
+    private String company;
+    @Expose
+    private String address;
+    @Expose
+    private String homePhone;
+    @Expose
+    private String mobilePhone;
+    @Expose
+    private String workPhone;
+    @Expose
+    private String faxPhone;
+    @Expose
+    private String email1;
+    @Expose
+    private String email2;
+    @Expose
+    private String email3;
+    @Expose
+    private String homepage;
+    @Expose
+    private String bday;
+    @Expose
+    private String bmonth;
+    @Expose
+    private String byear;
+    @Expose
+    private String aday;
+    @Expose
+    private String amonth;
+    @Expose
+    private String ayear;
+    @Expose
+    private String group;
+    @Expose
+    private String address2;
+    @Expose
+    private String phone2;
+    @Expose
+    private String notes;
+    @Expose
+    private String allPhones;
+    @Expose
+    private String allEmails;
+    @Expose
+    private File photo;
 
     public ContactData withId(int id) {
         this.id = id;
