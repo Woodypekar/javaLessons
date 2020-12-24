@@ -17,8 +17,8 @@ public class ContactModificationTests extends TestBase{
     public void ensurePrediction(){
         if (app.db().contacts().size() == 0) {
             app.goTo().addForm();
-            app.contact().createContact(new ContactData().withFirstname("Nikitos").withLastname("Lagutchev"), true);
-            app.contact().submit();
+            app.contact().create(new ContactData().withFirstname("Nikitos").withLastname("Lagutchev").withBday("12").withBmonth("May").withByear("1234")
+                    .withAday("17").withAmonth("November").withAyear("7654").withHomePhone("123").withMobilePhone("456").withWorkPhone("789"));
             app.goTo().homePage();
         }
     }
