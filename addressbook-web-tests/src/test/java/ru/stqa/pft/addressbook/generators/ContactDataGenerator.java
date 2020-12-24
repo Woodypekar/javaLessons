@@ -61,7 +61,7 @@ public class ContactDataGenerator {
                         , contact.getFirstname(), contact.getLastname()
                         , contact.getAddress(), contact.getHomePhone(), contact.getMobilePhone(), contact.getEmail1()
                         , contact.getEmail2(), contact.getEmail3(), contact.getBday(), contact.getBmonth()
-                        , contact.getByear(), contact.getAday(),contact.getAmonth(),contact.getAyear(), contact.getGroup(),contact.getPhoto()));
+                        , contact.getByear(), contact.getAday(),contact.getAmonth(),contact.getAyear(),contact.getPhoto()));
             }
         }
     }
@@ -92,7 +92,7 @@ public class ContactDataGenerator {
                     .withMobilePhone(String.format("231 %s", i)).withWorkPhone(String.format("321 %s", i)).withEmail1(String.format("hghggh@mail.ru %s", i))
                     .withEmail2(String.format("vbvbv@mail.ru %s", i)).withEmail3(String.format("ajdjhaljs@mail.ru %s", i))
                     .withBday("12").withBmonth("May").withByear("1234").withAday("15").withAmonth("November").withAyear("7654")
-                    .withGroup("Nikitosiki").withPhoto(photo));
+                    .withPhoto(photo));
         }
         return contacts;
     }

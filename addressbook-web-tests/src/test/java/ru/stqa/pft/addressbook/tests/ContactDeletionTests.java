@@ -15,7 +15,7 @@ public class ContactDeletionTests extends TestBase{
         if (app.db().contacts().size() == 0) {
             app.goTo().addForm();
             app.contact().createContact(new ContactData().withFirstname("Nikitos").withLastname("Lagutchev").withBday("12").withBmonth("May").withByear("1234")
-                    .withAday("17").withAmonth("November").withAyear("7654").withGroup("Nikitosiki"), true);
+                    .withAday("17").withAmonth("November").withAyear("7654"), true);
             app.contact().submit();
             app.goTo().homePage();
         }

@@ -41,7 +41,7 @@ public class ContactHelper extends HelperBase{
       list(By.name("amonth"), contactData.getAmonth());
       type(By.name("ayear"), contactData.getAyear());
       if (creation){
-        new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
+        //new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
       }else {
         Assert.assertFalse(isElementPresent(By.name("new_group")));
       }

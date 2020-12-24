@@ -3,9 +3,12 @@ import com.google.gson.annotations.Expose;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamOmitField;
 import org.hibernate.annotations.Type;
+import ru.stqa.pft.addressbook.tests.GroupModificationTests;
 
 import javax.persistence.*;
 import java.io.File;
+import java.util.HashSet;
+import java.util.Set;
 
 @XStreamAlias("contact")
 @Entity
@@ -94,9 +97,6 @@ public class ContactData {
     private String ayear;
     @Expose
     @Transient
-    private String group;
-    @Expose
-    @Transient
     private String address2;
     @Expose
     @Transient
@@ -114,6 +114,11 @@ public class ContactData {
     @Column(name = "photo")
     @Type(type = "text")
     private String photo;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "address_in_groups"
+            , joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "group_id"))
+    private Set<GroupData> groups = new HashSet<GroupData>();
 
     public ContactData withId(int id) {
         this.id = id;
@@ -192,11 +197,6 @@ public class ContactData {
 
     public ContactData withAyear(String ayear) {
         this.ayear = ayear;
-        return this;
-    }
-
-    public ContactData withGroup(String group) {
-        this.group = group;
         return this;
     }
 
@@ -308,8 +308,8 @@ public class ContactData {
         return ayear;
     }
 
-    public String getGroup() {
-        return group;
+    public Groups getGroups() {
+        return new Groups(groups);
     }
 
     public String getAddress2() {

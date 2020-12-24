@@ -29,7 +29,7 @@ public class ContactCreationsTests extends TestBase {
         list.add(new Object[] {new ContactData().withFirstname(split[0]).withLastname(split[1])
                 .withAddress(split[2]).withHomePhone(split[3]).withMobilePhone(split[4]).withEmail1(split[5])
                 .withEmail2(split[6]).withEmail3(split[7]).withBday(split[8]).withBmonth(split[9])
-                .withByear(split[10]).withAday(split[11]).withAmonth(split[12]).withAyear(split[13]).withGroup(split[14]).withPhoto(new File(split[15]))});
+                .withByear(split[10]).withAday(split[11]).withAmonth(split[12]).withAyear(split[13]).withPhoto(new File(split[15]))});
         line = reader.readLine();
       }
     }
