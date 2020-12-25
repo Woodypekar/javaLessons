@@ -21,6 +21,7 @@ public class ApplicationManager {
     private FtpHelper ftp;
     private MailHelper mailHelper;
     private UsersHelper usersHelper;
+    private SoapHelper soapHelper;
 
 
 
@@ -75,6 +76,13 @@ public class ApplicationManager {
             usersHelper = new UsersHelper(this);
         }
         return usersHelper;
+
+        }
+    public SoapHelper soap() {
+        if (soapHelper == null) {
+            soapHelper = new SoapHelper(this);
+        }
+        return soapHelper;
     }
 
     public WebDriver getDriver() {

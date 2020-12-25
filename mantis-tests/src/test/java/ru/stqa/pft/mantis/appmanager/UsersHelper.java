@@ -46,7 +46,7 @@ public class UsersHelper extends HelperBase {
         if (usersCache != null) {
             return new Users(usersCache);
         }
-        
+
         usersCache = new Users();
         WebElement table = wd.findElement(By.xpath("//table"));
         List<WebElement> rows = table.findElements(By.tagName("tr"));
