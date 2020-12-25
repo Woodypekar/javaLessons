@@ -11,8 +11,6 @@ dependencies{
     implementation 'org.testng:testng:7.0.0'
 }
 
-task testGroups(type: Test) {
-    useTestNG() {
-        suites 'src/test/resources/testng.xml'
-    }
+Test{
+    useTestNG()
 }
